@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chenli - Usaha Anda</title>
+    <title>Chenli - Your Business</title>
+    <link rel="icon" type="image/png" href="./public/Logo.png">
+    <link rel="apple-touch-icon" href="./public/Logo.png">
     <style>
         * {
             margin: 0;
@@ -39,9 +41,14 @@
         }
 
         .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #2563eb;
+            color: #dc2626;
             text-decoration: none;
         }
 
@@ -59,12 +66,12 @@
         }
 
         .nav-links a:hover {
-            color: #2563eb;
+            color: #dc2626;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             color: white;
             padding: 150px 2rem 100px;
             text-align: center;
@@ -73,27 +80,98 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             animation: fadeInUp 1s;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+        .branches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .branch-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .branch-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .branch-card .hours {
+            font-size: 1rem;
             opacity: 0.9;
-            animation: fadeInUp 1.2s;
+            margin: 1rem 0;
+        }
+
+        .branch-card .map-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: white;
+            text-decoration: underline;
+            transition: opacity 0.3s;
+        }
+
+        .branch-card .map-link:hover {
+            opacity: 0.8;
+        }
+
+        .delivery-apps {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .delivery-apps h3 {
+            width: 100%;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-logo {
+            height: 60px;
+            width: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.3s;
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .app-logo:hover {
+            opacity: 1;
+            transform: scale(1.1);
         }
 
         .btn {
             display: inline-block;
             padding: 1rem 2.5rem;
             background: #fff;
-            color: #667eea;
+            color: #dc2626;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 1.4s;
+            margin-top: 2rem;
         }
 
         .btn:hover {
@@ -112,7 +190,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2563eb;
+            color: #dc2626;
         }
 
         /* About Section */
@@ -133,14 +211,21 @@
         }
 
         .about-image {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             height: 300px;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 5rem;
+            font-size: 3rem;
+            padding: 2rem;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         /* Services Section */
@@ -161,7 +246,7 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.2);
         }
 
         .service-icon {
@@ -170,7 +255,7 @@
         }
 
         .service-card h3 {
-            color: #2563eb;
+            color: #dc2626;
             margin-bottom: 1rem;
         }
 
@@ -186,7 +271,7 @@
         }
 
         .contact-info h3 {
-            color: #2563eb;
+            color: #dc2626;
             margin-bottom: 1rem;
         }
 
@@ -214,7 +299,7 @@
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: #2563eb;
+            border-color: #dc2626;
         }
 
         .contact-form textarea {
@@ -252,8 +337,8 @@
                 font-size: 2.5rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .branches {
+                grid-template-columns: 1fr;
             }
 
             .about-content,
@@ -263,7 +348,15 @@
 
             .about-image {
                 height: 200px;
-                font-size: 3rem;
+                font-size: 2rem;
+            }
+
+            .delivery-apps {
+                gap: 1rem;
+            }
+
+            .app-logo {
+                height: 50px;
             }
         }
     </style>
@@ -272,89 +365,114 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">Chenli</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <img src="./public/Logo.png" alt="Chenli Logo" class="logo">
+                <a href="#" class="logo-text">Chenli</a>
+            </div>
             <ul class="nav-links">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#services">Layanan</a></li>
-                <li><a href="#contact">Kontak</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Selamat Datang di Chenli</h1>
-        <p>Solusi Terbaik untuk Kebutuhan Anda</p>
-        <a href="#contact" class="btn">Hubungi Kami</a>
+        <h1>Welcome to Chenli</h1>
+        
+        <div class="branches">
+            <div class="branch-card">
+                <h3>Chenli Rawamangun</h3>
+                <p class="hours">🕐 Open: 6:00 PM - 12:00 AM</p>
+                <a href="https://maps.app.goo.gl/BPfZ7JJxLsEJeYfu9" target="_blank" class="map-link">📍 View on Google Maps</a>
+            </div>
+            
+            <div class="branch-card">
+                <h3>Chenli Setiabudi</h3>
+                <p class="hours">🕐 Open: 24 Hours</p>
+                <a href="https://maps.app.goo.gl/fCjPx3niFh94QexE9" target="_blank" class="map-link">📍 View on Google Maps</a>
+            </div>
+            
+            <div class="branch-card">
+                <h3>Chenli Pulogadung</h3>
+                <p class="hours">🕐 Open: 6:00 PM - 12:00 AM</p>
+                <a href="https://maps.app.goo.gl/EjZsBJPcnfw2MPqQ7" target="_blank" class="map-link">📍 View on Google Maps</a>
+            </div>
+        </div>
+
+        <div class="delivery-apps">
+            <h3>Available on:</h3>
+            <img src="./public/grab.png" alt="Grab" class="app-logo" style="height: 60px;">
+            <img src="./public/gojek.png" alt="Gojek" class="app-logo" style="height: 60px;">
+            <img src="./public/shopee.png" alt="Shopee" class="app-logo" style="height: 60px;">
+        </div>
+
+        <a href="#contact" class="btn">Contact Us</a>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2 class="section-title">Tentang Kami</h2>
+        <h2 class="section-title">About Us</h2>
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    Chenli adalah usaha yang berkomitmen untuk memberikan pelayanan terbaik kepada pelanggan. 
-                    Dengan pengalaman dan dedikasi tinggi, kami siap membantu Anda mencapai tujuan bisnis Anda.
+                    Chenli is a culinary business committed to providing the best food and service to our customers. 
+                    With multiple branches across Jakarta and extensive experience in the culinary industry, we are dedicated to delivering high-quality food and exceptional dining experiences.
                 </p>
                 <p>
-                    Kami percaya bahwa kualitas dan kepuasan pelanggan adalah prioritas utama. 
-                    Mari bersama-sama membangun kesuksesan yang berkelanjutan.
+                    We believe that quality and customer satisfaction are our top priorities. 
+                    Our team works tirelessly to ensure every dish meets our high standards of taste, freshness, and presentation.
+                </p>
+                <p>
+                    <strong>Partnership & Collaboration:</strong> We are open to business partnerships, collaborations, catering services, and other culinary ventures. 
+                    Whether you're interested in franchising opportunities, event catering, or other business collaborations, we'd love to hear from you. 
+                    Let's build sustainable success together in the culinary world.
                 </p>
             </div>
             <div class="about-image">
-                CHENLI
+                <img src="./public/Logo.png" alt="Chenli">
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services">
-        <h2 class="section-title">Layanan Kami</h2>
+        <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🚀</div>
-                <h3>Layanan Profesional</h3>
-                <p>Memberikan layanan berkualitas tinggi dengan standar profesional yang terpercaya.</p>
+                <h3>Professional Service</h3>
+                <p>Providing high-quality service with trusted professional standards.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">💼</div>
-                <h3>Konsultasi Bisnis</h3>
-                <p>Konsultasi untuk membantu mengembangkan dan mengoptimalkan bisnis Anda.</p>
+                <h3>Business Consultation</h3>
+                <p>Consultation to help develop and optimize your business.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">⭐</div>
-                <h3>Solusi Terbaik</h3>
-                <p>Menawarkan solusi yang tepat sesuai dengan kebutuhan dan tujuan Anda.</p>
+                <h3>Best Solutions</h3>
+                <p>Offering the right solutions according to your needs and goals.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="section-title">Hubungi Kami</h2>
+        <h2 class="section-title">Contact Us</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <h3>Informasi Kontak</h3>
-                <p><strong>Email:</strong> info@chenli.com</p>
-                <p><strong>Telepon:</strong> +62 XXX-XXXX-XXXX</p>
-                <p><strong>Alamat:</strong> Indonesia</p>
-                <p><strong>Jam Operasional:</strong> Senin - Jumat, 09:00 - 17:00</p>
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> chenli.team@gmail.com</p>
             </div>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah dikirim.');">
-                <input type="text" placeholder="Nama Anda" required>
-                <input type="email" placeholder="Email Anda" required>
-                <input type="tel" placeholder="No. Telepon">
-                <textarea placeholder="Pesan Anda" required></textarea>
-                <button type="submit" class="btn" style="background: #2563eb; color: white; border: none; cursor: pointer;">Kirim Pesan</button>
-            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Chenli. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2025 Chenli. All Rights Reserved.</p>
     </footer>
 
     <script>
