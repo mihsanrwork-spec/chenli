@@ -130,6 +130,45 @@
         .branch-card .map-link:hover {
             opacity: 0.8;
         }
+        
+        /* MODIFIKASI CSS: Rata Tengah dan Bold */
+        .delivery-apps-text {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* RATA TENGAH SELURUH CONTAINER */
+            padding-right: 0;
+        }
+
+        .delivery-apps-text h3 {
+            width: 100%; 
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center; /* RATA TENGAH JUDUL */
+        }
+        
+        .delivery-apps-text ul {
+            list-style: none;
+            display: flex; 
+            gap: 1rem; 
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* Gaya untuk membuat teks di dalam span menjadi bold */
+        .delivery-apps-text span {
+            font-weight: bold; 
+        }
+
+        /* Style untuk link yang mengelilingi span */
+        .delivery-apps-text a {
+            text-decoration: none; /* Hapus garis bawah pada link */
+        }
+
+        .delivery-apps-text li {
+            margin: 0; 
+        }
+        /* AKHIR MODIFIKASI */
 
         .delivery-apps {
             margin-top: 3rem;
@@ -350,6 +389,15 @@
                 height: 200px;
                 font-size: 2rem;
             }
+            
+            /* Pastikan tetap rata tengah di mode mobile */
+            .delivery-apps-text {
+                align-items: center; 
+            }
+            
+            .delivery-apps-text h3 {
+                text-align: center;
+            }
 
             .delivery-apps {
                 gap: 1rem;
@@ -362,11 +410,9 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <div style="display: flex; align-items: center; gap: 1rem;">
-                <img src="/Logo.png" alt="Chenli Logo" class="logo">
                 <a href="#" class="logo-text">Chenli</a>
             </div>
             <ul class="nav-links">
@@ -378,7 +424,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <h1>Welcome to Chenli</h1>
         
@@ -402,17 +447,35 @@
             </div>
         </div>
 
-        <div class="delivery-apps">
-            <h3>Available on:</h3>
-            <img src="/grab.png" alt="Grab" class="app-logo" style="height: 60px;">
-            <img src="/gojek.png" alt="Gojek" class="app-logo" style="height: 60px;">
-            <img src="/shopee.png" alt="Shopee" class="app-logo" style="height: 60px;">
+        <div class="delivery-apps-text">
+            <h3>Tersedia di:</h3>
+            <ul>
+                <li>
+                    <a href="https://food.grab.com/id/id/" target="_blank" rel="noopener noreferrer">
+                        <span style="color: blue; background-color: white; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                            Grab
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gofood.co.id/en" target="_blank" rel="noopener noreferrer">
+                        <span style="color: green; background-color: white; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                            Gojek
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://shopee.co.id/m/shopeefood" target="_blank" rel="noopener noreferrer">
+                        <span style="color: orange; background-color: white; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                            Shopee
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </div>
-
         <a href="#contact" class="btn">Contact Us</a>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <h2 class="section-title">About Us</h2>
         <div class="about-content">
@@ -430,14 +493,12 @@
                     Whether you're interested in franchising opportunities, event catering, or other business collaborations, we'd love to hear from you. 
                     Let's build sustainable success together in the culinary world.
                 </p>
-            </div>
-            <div class="about-image">
-                <img src="/Logo.png" alt="Chenli">
-            </div>
+            </div><div class="about-image">
+                 <strong style="color: white; font-weight: bold;">Chenli</strong>
+                </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services">
         <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
@@ -459,7 +520,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2 class="section-title">Contact Us</h2>
         <div class="contact-content">
@@ -470,9 +530,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Chenli. All Rights Reserved.</p>
+        <p>© 2025 Chenli. All Rights Reserved.</p>
     </footer>
 
     <script>
